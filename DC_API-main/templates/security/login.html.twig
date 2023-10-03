@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block header %}
+  {% include "components/home/navbar.html.twig" %}
+{% endblock %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<div class="hero min-h-screen bg-gray-50">
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <form method="post" class="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-white">
+      <div class="card-body">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Email</span>
+          </label>
+          <input type="text" placeholder="email" class="input input-bordered" name="email" id="inputEmail"/>
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input type="text" placeholder="password" class="input input-bordered" name="password" id="inputPassword"/>
+          <label class="label">
+            <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+          </label>
+          <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+        </div>
+        <div class="form-control mt-6">
+          <button class="btn btn-primary">Connexion</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

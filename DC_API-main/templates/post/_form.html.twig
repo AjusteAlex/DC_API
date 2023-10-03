@@ -1,0 +1,31 @@
+{{ form_start(form) }}
+<section class="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md dark:bg-gray-800 mt-20">
+    <h1 class="text-xl font-bold text-white capitalize dark:text-white">Créer un annonce</h1>
+    <div>
+        <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+            <div>
+                {{ form_row(form.title) }}
+            </div>
+            <div>
+                {{ form_row(form.description) }}
+            </div>
+            <div>
+               {{ form_row(form.category) }} 
+            </div>
+            <div>
+               {{ form_widget(form.illustration )}} 
+                
+            </div>
+        </div>
+
+        <div class="flex justify-end mt-6">
+           {{ form_row(form.publier)}}
+        </div>
+    </div>
+    {{ form_rest(form) }}
+</section>
+{{ form_end(form) }}
+
+
+
+

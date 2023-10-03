@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block body %}
+    {% include "components/global/search_header.html.twig" %}
+    <div class="flex flex-row">
+        {% include "components/post/side_menu.html.twig" %}
+
+        <article class="mt-10 mx-auto flex w-1/2 h-1/2 hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
+            <div class="rounded-[10px] bg-white p-4 !pt-20 sm:p-6 w-1/2">
+                <img src="{{ posts.illustration }}">
+                    {# ici la date de création du post (a ajouter dans la bdd) #}
+               {#  <time datetime="2022-10-10" class="block text-xs text-gray-500">
+                    10th Oct 2022
+                </time>
+                <a href="#">
+                    <h3 class="mt-0.5 text-lg font-medium text-gray-900">
+                        <u>Titre</u>: {{ posts.title }}
+                    </h3>
+                </a>
+
+                <p class="text-md text-gray-600"><u>Description</u>: {{ posts.description }}</p>
+
+                {# ici ça seras la catégorie#}
+                {# <div class="mt-4 flex flex-wrap gap-1">
+                    <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                    ><a href="{{ path('app_post_show', {'id': posts.id}) }}">
+                    Voir</a>
+                  </span>
+
+                    <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                    ><a href="{{ path('app_post_edit', {'id': posts.id}) }}">
+                          Editer</a>
+                  </span>
+
+                    <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600" onclick="return confirm('Êtes-vous sur de vouloir supprimer cette annonce ?');">
+                    <a href="{{ path('app_post_delete', {'id': posts.id}) }}">
+                    Supprimer</a>
+                  </span>
+                </div>
+                #}
+            </div>
+            <div class="w-1/2">
+                <h2>Détails de l'annonce</h2>
+                <div class="rounded-[10px] p-4 !pt-20 sm:p-6 w-1/2">
+                    <h3 class="mt-0.5 text-lg font-medium text-gray-900">
+                        <u>Titre</u>: {{ posts.title }}
+                    </h3>
+                    <p class="text-md text-gray-600"><u>Description</u>: {{ posts.description }}</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-1"> {# ici ça seras la catégorie#}
+                    <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                    ><a href="{{ path('app_post_show', {'id': posts.id}) }}">
+                    Voir</a>
+                  </span>
+
+                    <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                    ><a href="{{ path('app_post_edit', {'id': posts.id}) }}">
+                          Editer</a>
+                  </span>
+
+                    <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600" onclick="return confirm('Êtes-vous sur de vouloir supprimer cette annonce ?');">
+                    <a href="{{ path('app_post_delete', {'id': posts.id}) }}">
+                    Supprimer</a>
+                  </span>
+                </div>
+            </div>
+        </article>
+    </div>
+
+
+
+
+{#
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ posts.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ posts.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ posts.description }}</td>
+            </tr>
+            <tr>
+                <th>Illustration</th>
+                <td><img src="{{ posts.illustration }}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_post_index') }}">back to list</a>
+
+    <a href="{{ path('app_post_edit', {'id': posts.id}) }}">edit</a>
+
+    {{ include('post/_delete_form.html.twig') }}
+#}
+{% endblock %}
